@@ -143,9 +143,9 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url('./images/trilogy.jpg');
+  background-image: url('./images/lodha_elise_banner.png');
   background-size: cover;
-  /* background-position: center; */
+  background-position: center;
 }
 
 @media (max-width: 768px) {
@@ -154,7 +154,7 @@ body {
   }
 
   .hero-slide {
-    background-image: url('./images/trilogy_vertical.jpg');
+    background-image: url('./images/lodha_elise_vertical.png');
     /* ✅ FIX */
     background-size: contain; /* ✅ key fix */
     background-repeat: no-repeat;
