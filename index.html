@@ -6,7 +6,10 @@
   <title>Lodha Elise, Worli Mumbai</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.10.5/build/css/intlTelInput.css"
+>
 </head>
 <body>
 
@@ -718,7 +721,8 @@
           <div class="form-group">
             <label>Phone Number *</label>
 
-            <input type="text"
+            <input type="tel"
+            class="phone"
                    name="phone"
                    placeholder="+91 XXXXXXXXXX"
                    required>
@@ -896,7 +900,7 @@
 
         <div class="form-group">
           <label>PHONE *</label>
-          <input type="text" name="phone" required>
+          <input type="tel" class="phone" name="phone" required>
         </div>
 
       </div>
@@ -925,6 +929,33 @@
   </div>
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.10.5/build/js/intlTelInput.min.js"></script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("input.phone").forEach(function (phoneInput) {
+
+    // Prevent duplicate initialization
+    if (phoneInput.classList.contains("iti-initialized")) return;
+
+    const iti = window.intlTelInput(phoneInput, {
+      initialCountry: "in",
+      separateDialCode: true,
+      loadUtils: () =>
+        import(
+          "https://cdn.jsdelivr.net/npm/intl-tel-input@25.10.5/build/js/utils.js"
+        )
+    });
+
+    phoneInput.classList.add("iti-initialized");
+
+  });
+});
+</script>
+
+
 <script src="script.js"></script>
 </body>
 </html>
