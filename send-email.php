@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Email message
     $message = "
-    Godrej Trilogy Details:
+    Lodha Elise:
 
     Name: $name
     Phone: $phone
